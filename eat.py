@@ -1,12 +1,10 @@
-from operator import sub
 import subprocess
 import os
-from turtle import width
-
-from sqlalchemy import over
-
+import sys
 
 inputfile = "input2"
+if(len(sys.argv) > 2):
+  inputfile = sys.argv[2]
 
 
 def overlay(page, overlay, width, x, y):
