@@ -3,7 +3,7 @@
 
 
 # Overlay star.png to input.png
-composite  \( -geometry 70 $2 \) -geometry +12+50  homework/tmp/$1 homework/tmp/output_$1
+composite  \( -geometry $3 $2 \) -geometry $4  homework/tmp/$1 homework/tmp/output_$1
 
 
 
