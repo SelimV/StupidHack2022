@@ -4,7 +4,8 @@ import os
 
 
 
-overlays = ["scratch1.png", "ukonvasama_3B3E40.png"]
+overlays = os.listdir("overlays")
+print(overlays)
 
 minwidth = 100
 maxwidth = 400
@@ -15,8 +16,8 @@ def overlay(page, overlay, width):
   width = str(width)
   output = subprocess.run(["./convert_identify.sh", page], capture_output=True).stdout
   size = output.decode().split()
-  x = randint(-100, 200+int(size[0]))
-  y = randint(-100, 200+int(size[1]))
+  x = randint(-150, int(size[0]))
+  y = randint(-150, int(size[1]))
   coor = "+" + str(x) + "+" + str(y)
   rotation = str(randint(0, 360))
   subprocess.run(["./convert_overlay.sh", page, overlay, width, coor, rotation])
@@ -30,7 +31,7 @@ def bite(filename):
   overlay(filename, "overlays/" + bitemark, width)
 
 def eatPage(filename):
-  bites = randint(0, 10)
+  bites = randint(3, 10)
 
   for i in range(0, bites):
     bite(filename)
@@ -51,6 +52,7 @@ def eatFile(filename):
 
 
 def main():
+  subprocess.run(["rm", '-r', "homework/eaten"])
   files = os.listdir("homework")
   subprocess.run(["mkdir", "homework/eaten"])
 
