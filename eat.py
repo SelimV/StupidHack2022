@@ -3,45 +3,38 @@ import subprocess
 import os
 
 
-borderOverlays = ["bite1.png"]
-centerOverlays = ["star.png"]
 
-minwidth = 50
-maxwidth = 100
+overlays = ["bite1.png", "star.png"]
+
+minwidth = 100
+maxwidth = 400
 
 
 
-def overlay(page, overlay, width, x, y):
+def overlay(page, overlay, width):
   width = str(width)
+  output = subprocess.run(["./convert_identify.sh", page], capture_output=True).stdout
+  print(output.decode())
+  size = output.decode().split()
+  print(size)
+  x = randint(-100, 200+int(size[0]))
+  y = randint(-100, 200+int(size[1]))
   coor = "+" + str(x) + "+" + str(y)
   subprocess.run(["./convert_overlay.sh", page, overlay, width, coor])
 
-def biteBorder(filename):
-  i = randint(0, len(borderOverlays)-1)
-  bitemark = borderOverlays[i]
-  width = randint(minwidth, maxwidth)
-  x = 0
-  y = 0
-  overlay(filename, "overlays/" + bitemark, width, x, y)
-
-def biteCenter(filename):
-  i = randint(0, len(centerOverlays)-1)
-  bitemark = centerOverlays[i]
+def bite(filename):
+  i = randint(0, len(overlays)-1)
+  bitemark = overlays[i]
   
   width = randint(minwidth, maxwidth)
-  x = 400
-  y = 30
-  overlay(filename, "overlays/" + bitemark, width, x, y)
+ 
+  overlay(filename, "overlays/" + bitemark, width)
 
 def eatPage(filename):
-  centerBites = randint(0, 5)
-  borderBites = randint(0, 5)
+  bites = randint(0, 10)
 
-  for i in range(0, centerBites):
-    biteCenter(filename)
-
-  for i in range(0, borderBites):
-    biteBorder(filename)
+  for i in range(0, bites):
+    bite(filename)
 
 def eatFile(filename):
   subprocess.run(["./convert_pdf2png.sh", filename])
@@ -54,13 +47,14 @@ def eatFile(filename):
   tmpFiles = os.listdir("homework/tmp")
   print(tmpFiles)
 
-  subprocess.run(["mkdir", "homework/eaten"])
 
   subprocess.run(["./convert_png2pdf.sh", "eaten/" + filename])
 
 
 def main():
   files = os.listdir("homework")
+  subprocess.run(["mkdir", "homework/eaten"])
+
   for file in files:
     filename = file.split(".")[0]
     eatFile(filename)
