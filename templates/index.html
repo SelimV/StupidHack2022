@@ -9,8 +9,15 @@
     </head>
 
     <body style="background-color:white;">
-        <img src="{{ url_for('static', filename='icons/food.png') }}">
-        <button type="submit" onclick='eat()'>Eat</button>
+        <div>
+            <img src="{{ url_for('static', filename='icons/food.png') }}">
+            <br>
+            <button type="submit" onclick='eat()'>Eat</button>
+            <br>
+            <img src="{{ url_for('static', filename='icons/folder.png') }}">
+            <p>homework</p>    
+        </div>
+        
         <img src="{{ url_for('static', filename='cats/furycat-big.gif') }}">
         
     </body>
