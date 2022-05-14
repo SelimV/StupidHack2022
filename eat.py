@@ -25,8 +25,11 @@ def overlay(page, overlay, width):
 def bite(filename):
   i = randint(0, len(overlays)-1)
   bitemark = overlays[i]
-  
+
   width = randint(minwidth, maxwidth)
+
+  if("paw" in bitemark):
+    width = 150
  
   overlay(filename, "overlays/" + bitemark, width)
 
