@@ -26,6 +26,9 @@ setInterval(
             document.getElementById('sadcat').style.display='none';
             document.getElementById('happycat').style.display='none';
             document.getElementById('happiestcat').style.display='none';
+
+            document.getElementById('ripped').style.display='inline';
+            document.getElementById('folder').style.display='none';
             if(!ateRecently){
                 eat();
                 ateRecently=true;
