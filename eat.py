@@ -34,7 +34,7 @@ def bite(filename):
   overlay(filename, "overlays/" + bitemark, width)
 
 def eatPage(filename):
-  bites = randint(3, 10)
+  bites = randint(5, 13)
 
   for i in range(0, bites):
     bite(filename)
