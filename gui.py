@@ -1,13 +1,13 @@
-from flask import Flask
+from flask import Flask, render_template
 import os
 
 app = Flask(__name__)
 
 @app.route('/')
 def index():
-    return "eh"
+    return render_template("index.html")
 
-@app.route('/vaa')
+@app.route('/eat')
 def vaa():
     os.system('python3 eat.py')
     return '<h2>vaa</h2>'
