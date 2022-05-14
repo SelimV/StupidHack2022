@@ -5,11 +5,14 @@
         <title>HD Cat Kisu :P</title>
         <!--Load jQuery-->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-        <script src="{{ url_for('static', filename='script.js') }}"></script>
+        <script src="{{ url_for('static', filename='script0.js') }}"></script>
     </head>
 
     <body style="background-color:white;">
-        <div style="width: fit-content; margin-left: auto; margin-right: auto;">
+
+        
+        
+        <div style="width: fit-content;">
             <div style="width: 100px; float: left; margin-top: 150px;">
                 <img src="{{ url_for('static', filename='icons/food.png') }}">
                 <br>
@@ -20,7 +23,11 @@
             </div>
 
             <div style="margin-top: 1cm; margin-left: 110px;">
-                <img src="{{ url_for('static', filename='cats/furycat-big.gif') }}">
+                <img id='furycat' src="{{ url_for('static', filename='cats/furycat-big.gif') }}" style="position:absolute;display: none;">
+                <img id='sadcat' src="{{ url_for('static', filename='cats/sadcat-big.gif') }}" style="position:absolute;display: none;">
+                <img id='happycat' src="{{ url_for('static', filename='cats/happycat-big.gif') }}" style="position:absolute;display: none;">
+                <img id='happiestcat' src="{{ url_for('static', filename='cats/happiestcat-big.gif') }}" style="position:absolute;">
+
             </div>
         </div>
     </body>
