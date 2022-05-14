@@ -9,17 +9,20 @@
     </head>
 
     <body style="background-color:white;">
-        <div>
-            <img src="{{ url_for('static', filename='icons/food.png') }}">
-            <br>
-            <button type="submit" onclick='eat()'>Eat</button>
-            <br>
-            <img src="{{ url_for('static', filename='icons/folder.png') }}">
-            <p>homework</p>    
+        <div style="width: fit-content; margin-left: auto; margin-right: auto;">
+            <div style="width: 100px; float: left; margin-top: 150px;">
+                <img src="{{ url_for('static', filename='icons/food.png') }}">
+                <br>
+                <button type="submit" onclick='eat()'>GIB CHEEZBURGER</button>
+                <br><br><br>
+                <img src="{{ url_for('static', filename='icons/folder.png') }}">
+                homework 
+            </div>
+
+            <div style="margin-top: 1cm; margin-left: 110px;">
+                <img src="{{ url_for('static', filename='cats/furycat-big.gif') }}">
+            </div>
         </div>
-        
-        <img src="{{ url_for('static', filename='cats/furycat-big.gif') }}">
-        
     </body>
     
 </html>
