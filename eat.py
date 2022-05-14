@@ -34,17 +34,17 @@ def bite(filename):
   overlay(filename, "overlays/" + bitemark, width)
 
 def eatPage(filename):
-  bites = randint(5, 13)
+  bites = randint(10, 18)
 
   for i in range(0, bites):
     bite(filename)
 
 def shufflepages(files):
-  numbers = range(len(files))
+  numbers = list(range(len(files)))
   shuffle(numbers)
 
   for i in range(len(files)):
-    subprocess.run(["mv", files[i], str(numbers[i])+".png"])  
+    subprocess.run(["mv", "homework/tmp/"+files[i], "homework/tmp/"+str(numbers[i])+".png"])  
 
 def eatFile(filename):
   subprocess.run(["./convert_pdf2png.sh", filename])
