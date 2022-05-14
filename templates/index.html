@@ -5,13 +5,16 @@
         <title>HD Cat Kisu :P</title>
         <!--Load jQuery-->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-        <script src="{{ url_for('static', filename='script.js') }}"></script>
+        <script src="{{ url_for('static', filename='script0.js') }}"></script>
     </head>
 
     <body style="background-color:white;">
         <button type="submit" onclick='eat()'>Eat</button>
-        <img src="{{ url_for('static', filename='cats/furycat-big.gif') }}">
-        
+        <button type="submit" onclick='onLoad()'>Start</button>
+        <img id='furycat' src="{{ url_for('static', filename='cats/furycat-big.gif') }}" style="position:absolute;display: none;">
+        <img id='sadcat' src="{{ url_for('static', filename='cats/sadcat-big.gif') }}" style="position:absolute;display: none;">
+        <img id='happycat' src="{{ url_for('static', filename='cats/happycat-big.gif') }}" style="position:absolute;display: none;">
+        <img id='happiestcat' src="{{ url_for('static', filename='cats/happiestcat-big.gif') }}" style="position:absolute;">
     </body>
     
 </html>
