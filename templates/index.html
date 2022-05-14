@@ -5,7 +5,7 @@
         <title>HD Cat Kisu :P</title>
         <!--Load jQuery-->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-        <script src="{{ url_for('static', filename='script0.js') }}"></script>
+        <script src="{{ url_for('static', filename='script2.js') }}"></script>
     </head>
 
     <body style="background-color:white;">
@@ -14,9 +14,11 @@
         
         <div style="width: fit-content;">
             <div style="width: 100px; float: left; margin-top: 150px;">
+                <button type="submit" onclick='gibHeadpats()'>GIB HEADPATS</button>
+                <br><br><br>
                 <img src="{{ url_for('static', filename='icons/food.png') }}">
                 <br>
-                <button type="submit" onclick='eat()'>GIB CHEEZBURGER</button>
+                <button type="submit" onclick='gibCheezburger()'>GIB CHEEZBURGER</button>
                 <br><br><br>
                 <img src="{{ url_for('static', filename='icons/folder.png') }}">
                 homework 

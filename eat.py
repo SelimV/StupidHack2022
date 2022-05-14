@@ -59,7 +59,7 @@ def eatFile(filename):
   print(tmpFiles)
 
 
-  subprocess.run(["./convert_png2pdf.sh", "eaten/" + filename])
+  subprocess.run(["./convert_png2pdf.sh",  filename])
 
 
 def main():

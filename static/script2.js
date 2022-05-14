@@ -9,9 +9,18 @@ function eat() {
 var happiness=100;
 var ateRecently=false;
 
+function gibCheezburger(){
+    ateRecently=false
+    happiness+=50
+}
+function gibHeadpats(){
+    ateRecently=false
+    happiness+=30
+}
+
 setInterval(
     function(){
-        happiness-=10;
+        happiness-=5;
         if(happiness<=0){
             document.getElementById('furycat').style.display='inline';
             document.getElementById('sadcat').style.display='none';
