@@ -1,7 +1,7 @@
 function eat() {
     console.log("Pressed eat")
     $.ajax({
-        url: "hello.py"
+        url: "/eat"
     })
     console.log("Ran ajax")
 }
