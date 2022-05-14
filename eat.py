@@ -1,4 +1,4 @@
-from random import randint
+from random import randint, shuffle
 import subprocess
 import os
 
@@ -39,6 +39,13 @@ def eatPage(filename):
   for i in range(0, bites):
     bite(filename)
 
+def shufflepages(files):
+  numbers = range(len(files))
+  shuffle(numbers)
+
+  for i in range(len(files)):
+    subprocess.run(["mv", files[i], str(numbers[i])+".png"])  
+
 def eatFile(filename):
   subprocess.run(["./convert_pdf2png.sh", filename])
 
@@ -47,6 +54,7 @@ def eatFile(filename):
   for file in tmpFiles:
     eatPage(file)
 
+  shufflepages(tmpFiles)
   tmpFiles = os.listdir("homework/tmp")
   print(tmpFiles)
 
