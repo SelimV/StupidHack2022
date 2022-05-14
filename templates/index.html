@@ -9,12 +9,27 @@
     </head>
 
     <body style="background-color:white;">
-        <button type="submit" onclick='eat()'>Eat</button>
-        <button type="submit" onclick='onLoad()'>Start</button>
-        <img id='furycat' src="{{ url_for('static', filename='cats/furycat-big.gif') }}" style="position:absolute;display: none;">
-        <img id='sadcat' src="{{ url_for('static', filename='cats/sadcat-big.gif') }}" style="position:absolute;display: none;">
-        <img id='happycat' src="{{ url_for('static', filename='cats/happycat-big.gif') }}" style="position:absolute;display: none;">
-        <img id='happiestcat' src="{{ url_for('static', filename='cats/happiestcat-big.gif') }}" style="position:absolute;">
+
+        
+        
+        <div style="width: fit-content;">
+            <div style="width: 100px; float: left; margin-top: 150px;">
+                <img src="{{ url_for('static', filename='icons/food.png') }}">
+                <br>
+                <button type="submit" onclick='eat()'>GIB CHEEZBURGER</button>
+                <br><br><br>
+                <img src="{{ url_for('static', filename='icons/folder.png') }}">
+                homework 
+            </div>
+
+            <div style="margin-top: 1cm; margin-left: 110px;">
+                <img id='furycat' src="{{ url_for('static', filename='cats/furycat-big.gif') }}" style="position:absolute;display: none;">
+                <img id='sadcat' src="{{ url_for('static', filename='cats/sadcat-big.gif') }}" style="position:absolute;display: none;">
+                <img id='happycat' src="{{ url_for('static', filename='cats/happycat-big.gif') }}" style="position:absolute;display: none;">
+                <img id='happiestcat' src="{{ url_for('static', filename='cats/happiestcat-big.gif') }}" style="position:absolute;">
+
+            </div>
+        </div>
     </body>
     
 </html>
