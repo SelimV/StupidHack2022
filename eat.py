@@ -4,7 +4,7 @@ import os
 
 
 
-overlays = ["bite1.png", "star.png"]
+overlays = ["scratch1.png", "ukonvasama_3B3E40.png"]
 
 minwidth = 100
 maxwidth = 400
@@ -14,13 +14,12 @@ maxwidth = 400
 def overlay(page, overlay, width):
   width = str(width)
   output = subprocess.run(["./convert_identify.sh", page], capture_output=True).stdout
-  print(output.decode())
   size = output.decode().split()
-  print(size)
   x = randint(-100, 200+int(size[0]))
   y = randint(-100, 200+int(size[1]))
   coor = "+" + str(x) + "+" + str(y)
-  subprocess.run(["./convert_overlay.sh", page, overlay, width, coor])
+  rotation = str(randint(0, 360))
+  subprocess.run(["./convert_overlay.sh", page, overlay, width, coor, rotation])
 
 def bite(filename):
   i = randint(0, len(overlays)-1)
